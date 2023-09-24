@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'Dovemayo_gothic';
+}
+
+.divMain{
+    width:auto;
+    height:600px;
+    display: flex;
+}
+
+
+.divTextArea{
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 10px;
+    width: 300px;
+    height: 600px;
+}
+
+.divOutput{
+    width:300px;
+    height: 600px;
+    overflow:scroll; 
+    margin-top: 10px;
+}
+
+.divMidTitle{
+    margin-bottom: 5px;
+}
+
+.content{
+    resize: none;
+    border: solid 2px rgb(169, 190, 209);
+}
+
+select {
+
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  
+    color: #444;
+    background-color: #fff;
+  
+    padding: 0.6em 1.4em 0.5em 0.8em;
+    margin: 0;
+  
+    border: 1px solid #aaa;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  }
+
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-indigo {
+    background-color: aliceblue;
+    color: #000000;
+}
+
+.w-btn-indigo-outline {
+    border: 3px solid aliceblue;
+    color: aliceblue;
+}
+
+.w-btn-indigo-outline:hover {
+    color: aliceblue;
+    background: aliceblue;
+}
+
+.v-line {
+    margin-top: 30px;
+    margin-right: 20px;
+    border-left : solid #012738;
+    height : 600px;
+  }

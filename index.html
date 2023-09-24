@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dto 생성</title>
+    <script src="js/makeDto.js"></script>
+    <link rel="stylesheet" href="css/makeDto.css" type="text/css">
+</head>
+
+<body>
+    <h1 class="h1title">DTO 생성기</h1>
+    <div id="inputs">
+        <div class="input-group">
+            <div>
+                <select id="selectType" name="type">
+                    <option value="dto">DTO</option>
+                    <option value="modelDto">MODEDL DTO</option>
+                </select>
+                <button onclick="displayValues()" class="w-btn w-btn-indigo">출력</button>
+                <button onclick="copyValues()" class="w-btn w-btn-indigo">복사</button>
+            </div>
+            <divn class="divMain">
+                
+                <div class="divTextArea">
+                    <div class="divMidTitle">컬럼ID</div>
+                    <textarea class="content" id="columnId" placeholder="컬럼ID" cols="40" rows="35"></textarea>
+                </div>
+
+                <div class="divTextArea">
+                    <div class="divMidTitle">컬럼명</div>
+                    <textarea class="content" id="columnName" placeholder="컬럼명" cols="40" rows="35"></textarea>
+                </div>
+
+                <div class="divTextArea">
+                    <div class="divMidTitle">컬럼 타입</div>
+                    <textarea class="content" id="columnType" placeholder="컬럼 타입" cols="40" rows="35"></textarea>
+                </div>
+
+                <div class='v-line'></div>
+
+                <div class="divTextArea">
+                    <div class="divMidTitle">결과값</div>
+                    <div class="divOutput" id="output"></div>
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>

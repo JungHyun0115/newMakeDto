@@ -11,7 +11,7 @@
 
 .divMain{
     width:auto;
-    height:600px;
+    height:500px;
     display: flex;
 }
 
@@ -20,28 +20,34 @@
     margin-top: 10px;
     margin-right: 10px;
     height: 10px;
-    width: 300px;
-    height: 600px;
-}
-
-.divOutput{
-    width:300px;
-    height: 600px;
-    overflow:scroll; 
-    margin-top: 10px;
+    width: 350px;
+    height: 500px;
 }
 
 .divMidTitle{
     margin-bottom: 5px;
+    font-size: large;
+}
+
+.divMainTitle{
+    display: flex;
+}
+
+.divSelectType{
+    display : flex;	  
+    justify-content : center;
+    align-items : center;
+    margin-right: 15px;
+    font-size: large;
 }
 
 .content{
     resize: none;
     border: solid 2px rgb(169, 190, 209);
+    font-size: medium;
 }
 
 select {
-
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -55,6 +61,8 @@ select {
     border: 1px solid #aaa;
     border-radius: 0.5em;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+
+    margin-right: 50px;
   }
 
 .w-btn {
@@ -67,26 +75,53 @@ select {
     text-decoration: none;
     font-weight: 600;
     transition: 0.25s;
+    margin-left: 10px;
 }
 
 .w-btn-indigo {
-    background-color: aliceblue;
+    background-color: rgb(216, 235, 251);
     color: #000000;
 }
 
 .w-btn-indigo-outline {
-    border: 3px solid aliceblue;
-    color: aliceblue;
+    border: 3px solid rgb(23, 23, 23);
+    color: rgb(13, 13, 14);
 }
 
-.w-btn-indigo-outline:hover {
-    color: aliceblue;
-    background: aliceblue;
+.w-btn-indigo:hover {
+    color: rgb(19, 19, 19);
+    background: rgb(61, 135, 238);
 }
 
 .v-line {
-    margin-top: 30px;
+    margin-top: 40px;
     margin-right: 20px;
     border-left : solid #012738;
-    height : 600px;
+    height : 500px;
+  }
+
+  /* 임의의 영역 생성 */
+.divOutput { 
+    width:300px;
+    height: 500px;
+    overflow:auto; 
+    margin-top: 10px;
+    border: 1px solid rgb(206, 209, 242);
+    overflow-y: scroll;
+  }
+  
+  /* 아래의 모든 코드는 영역::코드로 사용 */
+  .divOutput::-webkit-scrollbar {
+      width: 10px;  /* 스크롤바의 너비 */
+  }
+  
+  .divOutput::-webkit-scrollbar-thumb {
+      height: 10%; /* 스크롤바의 길이 */
+      background: #cae0ff; /* 스크롤바의 색상 */
+      
+      border-radius: 10px;
+  }
+  
+  .divOutput::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
   }

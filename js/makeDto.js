@@ -41,51 +41,47 @@ function displayValues() {
     const dtoType = document.getElementById("selectType").value;
 
     let outputText = "";
-
+    let arrModelDto = [];
+    
     arrId.forEach(function(input, index) {
-        if(dtoType == "dto" && index == 0){
-            outputText += "@Id \n";
-        }
-        
-        if(dtoType == "dto"){
-            outputText += "@Column(name=\""+input+"\") \n";
-        }
-        
-        outputText += "@Schema(description=\""+arrName[index]+"\") \n"
-
-        let type = selectType(arrType[index]);
-
-        if(input.indexOf('_') == -1){
-            outputText += "private " + type + input.toLowerCase() + ";\n\n";
-            
-        }else{
-            outputText += "private " + type + convertToCamelCase(input) + ";\n\n";
+        if(input != ""){
+    
+            if(dtoType == 'dto'){
+                if(index == 0){
+                    outputText += "@Id \n";
+                }
+                outputText += "@Column(name=\""+input+"\") \n";
+                outputText += "@Schema(description=\""+arrName[index]+"\") \n";
+                outputText += makeType(arrType[index], input, outputText);
+            }else{
+                arrModelDto.push(input);
+    
+                if(isDuplicate(arrModelDto) == false){
+                    outputText += "@Schema(description=\""+arrName[index]+"\") \n";
+                    outputText += makeType(arrType[index], input, outputText);
+                }
+            }
         }
     });
 
-
-
     // 결과를 출력할 div에 HTML을 설정합니다.
-
     const outputDiv = document.getElementById("output");
-
     outputDiv.innerHTML = outputText.replace(/\n/g, "<br>");
-
-
-
 }
 
 function selectType(type){
     let returnType = "";
 
-    if(type.includes('varchar')){
+    if(type.includes('VARCHAR')){
         returnType = "String ";
-    }else if(type.includes("number")){
+    }else if(type.includes("NUMBER")){
         returnType = "int ";
-    }else if(type.includes("timestamp")){
+    }else if(type.includes("TIME")){
         returnType = "Timestamp ";
-    }else if(type.includes("date")){
+    }else if(type.includes("DATE")){
         returnType = "Date ";
+    }else if(type.includes("CLOB")){
+        returnType = "String ";
     }else {
         returnType = "@확인필요 ";
     }
@@ -100,4 +96,28 @@ function copyValues() {
     // 복사가 완료되면 호출된다.
     alert("복사완료");
     });
+}
+
+function isDuplicate(arr){
+    const arrayToSet = new Set(arr);
+
+    if(arr.length != arrayToSet.size){
+        arr.pop();
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function makeType(arrType, input){
+    let type = selectType(arrType);
+    let outputText = '';
+
+    if(input.indexOf('_') == -1){
+        outputText += "private " + type + input.toLowerCase() + ";\n\n";
+        
+    }else{
+        outputText += "private " + type + convertToCamelCase(input) + ";\n\n";
+    }
+    return outputText;
 }
